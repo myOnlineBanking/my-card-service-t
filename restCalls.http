@@ -1,0 +1,85 @@
+#Create New Card
+POST http://localhost:8080/Card/create
+Content-Type: application/json
+
+{
+  "accountId": "61d5a795814720430e6d6b40",
+  "cardNumber": "7412 5823 9658 9874",
+  "csv": 798,
+  "dateExpiration": "02/2023",
+  "type": "VISA",
+  "cardHolderName": "TEST YEST"
+}
+
+###
+#Enable Card Card
+POST https://my-card-service-t.herokuapp.com/Card/enable
+Content-Type: application/json
+
+{
+"id": "61df5fca564d64058d7579a6"
+}
+###
+#Disable Card Card
+POST https://my-card-service-t.herokuapp.com/Card/disable
+Content-Type: application/json
+
+{
+  "id": "61df5fca564d64058d7579a6"
+}
+
+###
+#Update Existing Card
+PUT https://my-card-service-t.herokuapp.com/Card/update
+Content-Type: application/json
+
+{
+  "accepted": true,
+  "csv": 999,
+  "cardNumber": "454545",
+  "enabled": false,
+  "accountId": "string",
+  "id": "61d186de0ac36652d30ec545"
+}
+
+###
+#Fetch Cards Of Account
+GET https://my-card-service-t.herokuapp.com/Card/getAccountCards?accountId=string
+Accept: application/json
+
+###
+#Fetch Cards Of User
+GET http://localhost:8080/Card/getClientCards?userId=61d49aa49a397467188850ec
+Accept: application/json
+
+
+###
+#Get Single Card
+GET https://my-card-service-t.herokuapp.com/Card/get?id=61d186de0ac36652d30ec545
+Accept: application/json
+
+###
+#Get Single Card By Card Number
+GET https://my-card-service-t.herokuapp.com/Card/getByCardNumber?cardNumber=454545
+Accept: application/json
+
+###
+#Fetch All Cards
+GET  https://my-api-gateway-t.herokuapp.com/Card/getAll
+Accept: application/json
+
+###
+#Fetch Not Accepted Cards
+GET  https://my-api-gateway-t.herokuapp.com/Card/getNotAcceptable
+Accept: application/json
+
+
+
+###
+#Accept Card
+PUT  https://my-api-gateway-t.herokuapp.com/Card/{cardId}
+Accept: application/json
+{
+  
+}
+
